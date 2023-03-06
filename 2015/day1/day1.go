@@ -2,9 +2,9 @@ package day1
 
 import (
 	"fmt"
-	"io"
 	"log"
-	"os"
+
+	"github.com/stovenn/adventOfCode/util"
 )
 
 var currentStore = 0
@@ -13,17 +13,9 @@ var firstflag = false
 const inputPath = "./2015/day1/input.txt"
 
 func Run() {
-	file, err := os.Open(inputPath)
+	b, err := util.GetInput(inputPath)
 	if err != nil {
 		log.Fatal(err)
-	}
-	defer file.Close()
-
-	b, err := io.ReadAll(file)
-	if err != nil {
-		if err != io.EOF {
-			log.Fatal(err)
-		}
 	}
 
 	for i, c := range b {
