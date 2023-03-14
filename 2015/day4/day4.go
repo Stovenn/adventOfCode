@@ -12,7 +12,6 @@ const secretKey = "bgvyzdsv"
 var lowest int = 0
 
 func Run() {
-	// secret + number = hash
 	h := md5.New()
 
 	for {
